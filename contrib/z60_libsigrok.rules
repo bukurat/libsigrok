@@ -23,7 +23,8 @@
 ##
 
 ACTION!="add|change", GOTO="libsigrok_rules_end"
-SUBSYSTEM!="usb|usbmisc|usb_device", GOTO="libsigrok_rules_end"
+#added tty
+SUBSYSTEM!="tty|usb|usbmisc|usb_device", GOTO="libsigrok_rules_end"
 
 # Agilent USBTMC-connected devices
 # 34405A
@@ -154,6 +155,7 @@ ATTRS{idVendor}=="067b", ATTRS{idProduct}=="2303", MODE="664", GROUP="plugdev"
 
 # Openbench Logic Sniffer
 ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="000a", MODE="664", GROUP="plugdev"
+ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="fc92", MODE="664", GROUP="plugdev"
 
 # Rigol DS1000 series
 ATTRS{idVendor}=="1ab1", ATTRS{idProduct}=="0588", MODE="664", GROUP="plugdev"
